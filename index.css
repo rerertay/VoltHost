@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #08090D; /* Глибокий космічний чорний */
+    color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+/* Тонка фонова сітка для технологічного ефекту */
+.bg-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: 
+        linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Синє розмите світіння по центру */
+.bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+    filter: blur(60px);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Навігація (Header) */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: rgba(8, 9, 13, 0.7);
+    backdrop-filter: blur(12px); /* Ефект матового скла */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Логотип VoltHost з новою іконкою VH */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Контейнер для SVG іконки */
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #2563EB;
+}
+
+.btn-login {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 20px;
+    border-radius: 6px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    border-color: #2563EB;
+    background-color: rgba(37, 99, 235, 0.05);
+}
+
+/* Херо-зона (Hero Section) */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 850px;
+    margin-top: 60px;
+}
+
+.hero h1 {
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #FFFFFF 40%, #2563EB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: #94A3B8;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Кнопки дій */
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background-color: #2563EB;
+    color: #FFFFFF;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1D4ED8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.4);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #FFFFFF;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Теги переваг внизу */
+.features-badges {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: rgba(17, 19, 30, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge span.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #10B981;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #10B981;
+}
+
+.badge span.icon {
+    color: #2563EB;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+    }
+    .nav-links {
+        display: none;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
