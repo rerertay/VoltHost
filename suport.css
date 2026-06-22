@@ -1,0 +1,194 @@
+/* Базові налаштування для сторінки */
+body {
+    background-color: #000000; /* Повністю чорне тло для атмосфери Undertale */
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   1. АТМОСФЕРНИЙ ТЕКСТ "But nobody came." ПО ЦЕНТРУ
+   ========================================================================== */
+
+/* Контейнер, який тримає текст мертво по центру екрана */
+.undertale-container {
+    position: absolute;
+    top: 40%; /* Трішки вище центру, щоб гарно виглядало перед формою */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 20px;
+    pointer-events: none; /* Щоб текст не заважав клікати */
+}
+
+/* Стиль самого тексту */
+.undertale-text {
+    color: #FFFFFF;
+    font-family: 'Courier New', Courier, monospace; /* Піксельний/моноширинний шрифт */
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0;
+    opacity: 0; /* Спочатку схований */
+    
+    /* Анімація плавної появи: назва | тривалість (3 секунди) | плавність | залишатися видимим */
+    animation: fadeInVoid 3s ease-in-out forwards;
+}
+
+/* Анімація появи з пустоти */
+@keyframes fadeInVoid {
+    0% {
+        opacity: 0;
+        filter: blur(6px); /* Ефект легкого розмиття на початку */
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+
+/* ==========================================================================
+   2. СТИЛІЗАЦІЯ ФОРМИ ПІДТРИМКИ (TICKET FORM)
+   ========================================================================== */
+
+/* Контейнер для форми (опускаємо його нижче тексту) */
+.support-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 240px 20px 80px 20px; /* Великий верхній відступ, щоб текст помістився */
+    position: relative;
+    z-index: 2;
+}
+
+/* Картка форми — матове скло з тонкою неоновою рамкою */
+.support-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 550px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    
+    /* Форма теж плавно з'являється, але з невеликою затримкою */
+    opacity: 0;
+    animation: fadeInVoid 2s ease-in-out forwards;
+    animation-delay: 1.5s; /* З'явиться через 1.5 секунди, після тексту */
+}
+
+.support-box h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.support-box p {
+    color: #94A3B8;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Поля вводу та групування */
+.form-group {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #94A3B8;
+    font-weight: 500;
+}
+
+/* Стилі для інпутів, селекту та текстового поля */
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    background: rgba(8, 9, 13, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #FFFFFF;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Підсвічування синім кольором при кліку на поле */
+.form-group input:focus, 
+.form-group select:focus, 
+.form-group textarea:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 12px rgba(37, 99, 235, 0.25);
+}
+
+/* Колір фону списку, що випадає */
+.form-group select option {
+    background: #08090D;
+    color: #FFFFFF;
+}
+
+/* Забороняємо ламати дизайн розтягуванням textarea */
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Кнопка створення тикету */
+.btn-submit {
+    background: #2563EB;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.2);
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #1D4ED8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35);
+}
+
+
+/* ==========================================================================
+   3. АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ ПРИСТРОЇВ
+   ========================================================================== */
+@media (max-width: 768px) {
+    .undertale-text {
+        font-size: 20px; /* Зменшуємо текст на телефонах */
+        letter-spacing: 1.5px;
+    }
+    
+    .support-container {
+        padding: 180px 15px 40px 15px; /* Менші відступи на мобілці */
+    }
+
+    .support-box {
+        padding: 30px 20px;
+    }
+
+    .support-box h2 {
+        font-size: 22px;
+    }
+}
