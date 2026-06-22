@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoltHost — Game VPS</title>
-    <!-- Прибрали косий ліній перед назвою файлу -->
-    <link rel="stylesheet" href="index.css"> 
-</head>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <div class="bg-grid"></div>
@@ -26,14 +23,18 @@
             VoltHost
         </a>
         
-        <ul class="nav-links">
+        <ul class="nav-links" id="navLinks">
             <li><a href="#">Главна</a></li>
             <li><a href="#">Тарифи</a></li>
-            <li><a href="#">Інформація</a></li>
+            <li><a href="#">фотки</a></li>
             <li><a href="#">Пітримка</a></li>
         </ul>
 
-        
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
     <section class="hero">
@@ -60,5 +61,36 @@
             </div>
         </div>
     </section>
+    <section class="info-section">
+        <div class="info-grid">
+            
+            <div class="info-card card-top-right">
+                <div class="card-icon">⚡</div>
+                <h3>Потужне залізо</h3>
+                <p>Наші VPS працюють на сучасних процесорах AMD Ryzen 9 та швидкісних накопичувачах NVMe SSD, що гарантує максимальний FPS у грі.</p>
+            </div>
+
+            <div class="info-card card-mid-left">
+                <div class="card-icon">🌐</div>
+                <h3>Низький пінг & Локації</h3>
+                <p>Обирай локацію ближче до своїх гравців. Сервери розташовані у топових дата-центрах Європи з прямими каналами зв'язку для мінімальної затримки.</p>
+            </div>
+
+            <div class="info-card card-mid-right">
+                <div class="card-icon">🛡️</div>
+                <h3>DDoS Захист</h3>
+                <p>Розумний захист на рівнях L3-L7 впорається з будь-якими атаками.</p>
+            </div>
+
+            <div class="info-card card-bottom-right">
+                <div class="card-icon">🛠️</div>
+                <h3>Зручна Панель Керування</h3>
+                <p>Крута та проста панель, де можна встановлювати моди, плагіни, змінювати версії ядра та керувати файлами сервера в один клік.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="index.js"></script>
 </body>
 </html>

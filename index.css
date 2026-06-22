@@ -81,6 +81,7 @@ body {
     display: flex;
     list-style: none;
     gap: 30px;
+    margin-left: auto; /* ЦЕЙ РЯДОК посунув твої посилання в кінець */
 }
 
 .nav-links a {
@@ -95,38 +96,27 @@ body {
     color: #2563EB;
 }
 
-.btn-login {
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 8px 20px;
-    border-radius: 6px;
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.btn-login:hover {
-    border-color: #2563EB;
-    background-color: rgba(37, 99, 235, 0.05);
+/* Приховуємо бургер на комп'ютерах */
+.menu-toggle {
+    display: none;
 }
 
 /* Херо-зона (Hero Section) */
 .hero {
-    min-height: 100vh;
+    min-height: 70vh; /* Зменшили з 100vh, щоб інфа піднялася вище */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 120px 20px 40px 20px; /* Додали відступ зверху під шапку і зменшили знизу */
     position: relative;
     z-index: 2;
 }
 
 .hero-content {
     max-width: 850px;
-    margin-top: 60px;
+    margin-top: 0; /* Прибрали зайвий відступ */
 }
 
 .hero h1 {
@@ -230,18 +220,146 @@ body {
     color: #2563EB;
 }
 
+/* Секція з картками інформації */
+.info-section {
+    width: 100%;
+    padding: 20px 10% 80px 10%; /* Зменшили верхній padding з 80px до 20px */
+    position: relative;
+    z-index: 2;
+}
+
+/* Налаштування асиметричної сітки (Grid) точнісінько як на малюнку */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ділимо екран на 3 рівні колонки */
+    gap: 25px; /* Відступи між сірими квадратами */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Базовий стиль для кожної картки */
+.info-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s ease;
+}
+
+/* Ефект підсвічування при наведенні курсору */
+.info-card:hover {
+    background: rgba(37, 99, 235, 0.04);
+    border-color: rgba(37, 99, 235, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.1);
+}
+
+.card-icon {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #FFFFFF;
+}
+
+.info-card p {
+    font-size: 14px;
+    color: #94A3B8;
+    line-height: 1.6;
+}
+
+/* Розставляємо картки по позиціях з твого скриншоту */
+.card-top-right {
+    grid-column: 2 / 4; /* Займає 2-гу та 3-тю колонки в першому рядку */
+    min-height: 200px;
+}
+
+.card-mid-left {
+    grid-column: 1 / 3; /* Займає 1-шу та 2-гу колонки в другому рядку */
+    min-height: 220px;
+}
+
+.card-mid-right {
+    grid-column: 3 / 4; /* Квадратний блок праворуч */
+}
+
+.card-bottom-right {
+    grid-column: 2 / 4; /* Займає 2-гу та 3-тю колонки в нижньому рядку */
+    min-height: 200px;
+}
+
+/* Адаптивність для телефонів */
 @media (max-width: 768px) {
     .header {
         padding: 15px 5%;
     }
+
+    /* Показуємо іконку трьох смужок на мобілках */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background-color: #FFFFFF;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Мобільне меню повністю закрите за замовчуванням */
     .nav-links {
-        display: none;
+        display: none; 
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(8, 9, 13, 0.98);
+        backdrop-filter: blur(15px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-left: 0;
+        z-index: 99;
     }
-    .hero h1 {
-        font-size: 36px;
+
+    /* Клас, який вмикає відображення при кліку */
+    .nav-links.active {
+        display: flex;
     }
-    .hero p {
-        font-size: 16px;
+
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    /* Перетворення смужок на хрестик при активному меню */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 100px 20px 30px 20px;
+    }
     }
     .cta-buttons {
         flex-direction: column;
@@ -249,5 +367,20 @@ body {
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
+    }
+    /* Додати всередину @media (max-width: 768px) */
+    .info-section {
+        padding: 10px 5% 40px 5%; /* Мінімум відступів для мобілок */
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr; /* На мобілці стає 1 колонка замість 3 */
+        gap: 15px;
+    }
+    
+    .info-card, .card-top-right, .card-mid-left, .card-mid-right, .card-bottom-right {
+        grid-column: 1 / -1; /* Всі картки розтягуються на повну ширину */
+        min-height: auto;
+        padding: 25px;
     }
 }
