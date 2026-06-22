@@ -219,7 +219,7 @@ body {
 .badge span.icon {
     color: #2563EB;
 }
-
+/* Секція з картками інформації */
 /* Секція з картками інформації */
 .info-section {
     width: 100%;
@@ -356,10 +356,11 @@ body {
         transform: rotate(-45deg) translate(5px, -6px);
     }
 
-    .hero {
-        min-height: auto;
-        padding: 100px 20px 30px 20px;
+    .hero h1 {
+        font-size: 36px;
     }
+    .hero p {
+        font-size: 16px;
     }
     .cta-buttons {
         flex-direction: column;
@@ -370,7 +371,7 @@ body {
     }
     /* Додати всередину @media (max-width: 768px) */
     .info-section {
-        padding: 10px 5% 40px 5%; /* Мінімум відступів для мобілок */
+        padding: 40px 5%;
     }
     
     .info-grid {
