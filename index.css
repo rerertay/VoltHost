@@ -220,7 +220,7 @@ body {
     color: #2563EB;
 }
 /* Секція з картками інформації */
-/* Секція з картками інформації */
+
 .info-section {
     width: 100%;
     padding: 20px 10% 80px 10%; /* Зменшили верхній padding з 80px до 20px */
@@ -229,10 +229,11 @@ body {
 }
 
 /* Налаштування асиметричної сітки (Grid) точнісінько як на малюнку */
+/* Налаштування сітки Bento Grid на 3 рівні колонки */
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Ділимо екран на 3 рівні колонки */
-    gap: 25px; /* Відступи між сірими квадратами */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px; 
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -242,14 +243,14 @@ body {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: 35px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     transition: all 0.4s ease;
+    min-height: 180px; /* Робимо однакову базову висоту */
 }
 
-/* Ефект підсвічування при наведенні курсору */
 .info-card:hover {
     background: rgba(37, 99, 235, 0.04);
     border-color: rgba(37, 99, 235, 0.3);
@@ -258,14 +259,14 @@ body {
 }
 
 .card-icon {
-    font-size: 28px;
-    margin-bottom: 15px;
+    font-size: 26px;
+    margin-bottom: 12px;
 }
 
 .info-card h3 {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 600;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: #FFFFFF;
 }
 
@@ -275,24 +276,29 @@ body {
     line-height: 1.6;
 }
 
-/* Розставляємо картки по позиціях з твого скриншоту */
+/* РЯДОК 1 */
+.card-top-left {
+    grid-column: 1 / 2;  /* Маленький блок ліворуч */
+}
 .card-top-right {
-    grid-column: 2 / 4; /* Займає 2-гу та 3-тю колонки в першому рядку */
-    min-height: 200px;
+    grid-column: 2 / 4;  /* Довгий блок праворуч */
 }
 
+/* РЯДОК 2 */
 .card-mid-left {
-    grid-column: 1 / 3; /* Займає 1-шу та 2-гу колонки в другому рядку */
-    min-height: 220px;
+    grid-column: 1 / 3;  /* Довгий блок ліворуч */
 }
 
 .card-mid-right {
-    grid-column: 3 / 4; /* Квадратний блок праворуч */
+    grid-column: 3 / 4;  /* Маленький блок праворуч */
 }
 
+/* РЯДОК 3 */
+.card-bottom-left {
+    grid-column: 1 / 2;  /* Маленький блок ліворуч */
+}
 .card-bottom-right {
-    grid-column: 2 / 4; /* Займає 2-гу та 3-тю колонки в нижньому рядку */
-    min-height: 200px;
+    grid-column: 2 / 4;  /* Довгий блок праворуч */
 }
 
 /* Адаптивність для телефонів */
@@ -374,13 +380,13 @@ body {
         padding: 40px 5%;
     }
     
-    .info-grid {
-        grid-template-columns: 1fr; /* На мобілці стає 1 колонка замість 3 */
+   .info-grid {
+        grid-template-columns: 1fr;
         gap: 15px;
     }
     
-    .info-card, .card-top-right, .card-mid-left, .card-mid-right, .card-bottom-right {
-        grid-column: 1 / -1; /* Всі картки розтягуються на повну ширину */
+    .info-card {
+        grid-column: 1 / -1 !important;
         min-height: auto;
         padding: 25px;
     }
