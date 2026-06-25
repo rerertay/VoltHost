@@ -25,8 +25,8 @@
         
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Главна</a></li>
-            <li><a href="#">Тарифи</a></li>
-            <li><a href="#">Інформація</a></li>
+            <li><a href="./index.html#tarif">Тарифи</a></li>
+            <li><a href="./index.html#infarct">Інформація</a></li>
             <li><a href="suport.html">Підтримка</a></li>
         </ul>
 
@@ -44,8 +44,8 @@
             <p>Ідеальний геймінг з миттєвою активацією, надійним захистом від DDoS-атак та низьким пінгом на глобальних локаціях.</p>
             
             <div class="cta-buttons">
-                <a href="#" class="btn-primary">Створити Сервер</a>
-                <a href="#" class="btn-secondary">Переглянути Плани</a>
+                <a href="./index.html#tarif" class="btn-primary">Створити Сервер</a>
+                <a href="./index.html#tarif" class="btn-secondary">Переглянути Плани</a>
             </div>
 
             <div class="features-badges">
@@ -61,7 +61,7 @@
             </div>
         </div>
     </section>
-   <section class="info-section">
+   <section class="info-section" id="infarct">
         <div class="info-grid">
             
             <div class="info-card card-top-left">
@@ -102,6 +102,102 @@
 
         </div>
     </section>
+    <section class="pricing-section" id="tarif">
+        <h2 class="section-title">Оберіть свій <span class="text-gradient">Тариф</span></h2>
+        
+        <div class="pricing-grid">
+            
+            <div class="price-card">
+                <div class="price-badge">Старт</div>
+                <h3>VPS - 1</h3>
+                <div class="price-value">150 <span>грн/міс</span></div>
+                <ul class="price-features">
+                    <li>⚡ CPU: 1 Core (Ryzen 9)</li>
+                    <li>💾 RAM: 2 GB DDR4</li>
+                    <li>💽 NVMe SSD: 20 GB</li>
+                    <li>🛡️ DDoS Захист: L3/L4</li>
+                </ul>
+                <a href="#" class="btn-price">Замовити</a>
+            </div>
+
+            <div class="price-card popular">
+                <div class="price-badge-popular">Популярний</div>
+                <h3>VPS - 2</h3>
+                <div class="price-value">290 <span>грн/міс</span></div>
+                <ul class="price-features">
+                    <li>⚡ CPU: 2 Cores (Ryzen 9)</li>
+                    <li>💾 RAM: 4 GB DDR4</li>
+                    <li>💽 NVMe SSD: 40 GB</li>
+                    <li>🛡️ DDoS Захист: L3-L7 Розумний</li>
+                </ul>
+                <a href="#" class="btn-price">Замовити</a>
+            </div>
+
+            <div class="price-card">
+                <div class="price-badge">Профі</div>
+                <h3>VPS - 3</h3>
+                <div class="price-value">550 <span>грн/міс</span></div>
+                <ul class="price-features">
+                    <li>⚡ CPU: 4 Cores (Ryzen 9)</li>
+                    <li>💾 RAM: 8 GB DDR4</li>
+                    <li>💽 NVMe SSD: 80 GB</li>
+                    <li>🛡️ DDoS Захист: L3-L7 Розумний</li>
+                </ul>
+                <a href="#" class="btn-price">Замовити</a>
+            </div>
+
+            <div class="price-card">
+                <div class="price-badge">Ультра</div>
+                <h3>VPS - 4</h3>
+                <div class="price-value">990 <span>грн/міс</span></div>
+                <ul class="price-features">
+                    <li>⚡ CPU: 6 Cores (Ryzen 9)</li>
+                    <li>💾 RAM: 16 GB DDR4</li>
+                    <li>💽 NVMe SSD: 120 GB</li>
+                    <li>🛡️ DDoS Захист: Максимальний</li>
+                </ul>
+                <a href="#" class="btn-price">Замовити</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- МОДАЛЬНЕ ВІКНО ЗАМОВЛЕННЯ -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-container">
+            <!-- Кнопка закриття (хрестик) -->
+            <button class="modal-close" id="closeModal">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <!-- Ліва частина: Інформація про тариф -->
+            <div class="modal-sidebar">
+                <h4 id="modalTariffName">VPS - 2</h4>
+                <div class="modal-tariff-desc" id="modalTariffFeatures">
+                    <!-- Сюди за допомогою JS підтягуватимуться дані -->
+                </div>
+            </div>
+
+            <!-- Права частина: Форма оплати -->
+            <div class="modal-content">
+                <h3>Оформлення замовлення</h3>
+                <form class="modal-form" onsubmit="event.preventDefault(); alert('Оплата успішна!');">
+                    <div class="modal-input-group">
+                        <label for="modalEmail">Введіть ваш Email</label>
+                        <input type="email" id="modalEmail" placeholder="example@gmail.com" required>
+                    </div>
+                    
+                    <div class="modal-input-group">
+                        <label for="modalCard">Номер карти</label>
+                        <input type="text" id="modalCard" placeholder="4444 4444 4444 4444" required>
+                    </div>
+
+                    <button type="submit" class="btn-buy">КУПИТИ</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <script src="index.js"></script>
 </body>
