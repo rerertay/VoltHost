@@ -6,7 +6,8 @@
 }
 
 body {
-    background-color: #08090D; /* Глибокий космічний чорний */
+    background-color: #08090D;
+    /* Глибокий космічний чорний */
     color: #FFFFFF;
     overflow-x: hidden;
 }
@@ -18,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: 
+    background-image:
         linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -52,7 +53,8 @@ body {
     align-items: center;
     z-index: 100;
     background: rgba(8, 9, 13, 0.7);
-    backdrop-filter: blur(12px); /* Ефект матового скла */
+    backdrop-filter: blur(12px);
+    /* Ефект матового скла */
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -81,7 +83,8 @@ body {
     display: flex;
     list-style: none;
     gap: 30px;
-    margin-left: auto; /* ЦЕЙ РЯДОК посунув твої посилання в кінець */
+    margin-left: auto;
+    /* ЦЕЙ РЯДОК посунув твої посилання в кінець */
 }
 
 .nav-links a {
@@ -103,20 +106,23 @@ body {
 
 /* Херо-зона (Hero Section) */
 .hero {
-    min-height: 70vh; /* Зменшили з 100vh, щоб інфа піднялася вище */
+    min-height: 70vh;
+    /* Зменшили з 100vh, щоб інфа піднялася вище */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 120px 20px 40px 20px; /* Додали відступ зверху під шапку і зменшили знизу */
+    padding: 120px 20px 40px 20px;
+    /* Додали відступ зверху під шапку і зменшили знизу */
     position: relative;
     z-index: 2;
 }
 
 .hero-content {
     max-width: 850px;
-    margin-top: 0; /* Прибрали зайвий відступ */
+    margin-top: 0;
+    /* Прибрали зайвий відступ */
 }
 
 .hero h1 {
@@ -219,11 +225,13 @@ body {
 .badge span.icon {
     color: #2563EB;
 }
+
 /* Секція з картками інформації */
 
 .info-section {
     width: 100%;
-    padding: 20px 10% 80px 10%; /* Зменшили верхній padding з 80px до 20px */
+    padding: 20px 10% 80px 10%;
+    /* Зменшили верхній padding з 80px до 20px */
     position: relative;
     z-index: 2;
 }
@@ -232,8 +240,8 @@ body {
 /* Налаштування сітки Bento Grid на 3 рівні колонки */
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 25px; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -248,7 +256,8 @@ body {
     flex-direction: column;
     justify-content: center;
     transition: all 0.4s ease;
-    min-height: 180px; /* Робимо однакову базову висоту */
+    min-height: 180px;
+    /* Робимо однакову базову висоту */
 }
 
 .info-card:hover {
@@ -278,32 +287,41 @@ body {
 
 /* РЯДОК 1 */
 .card-top-left {
-    grid-column: 1 / 2;  /* Маленький блок ліворуч */
+    grid-column: 1 / 2;
+    /* Маленький блок ліворуч */
 }
+
 .card-top-right {
-    grid-column: 2 / 4;  /* Довгий блок праворуч */
+    grid-column: 2 / 4;
+    /* Довгий блок праворуч */
 }
 
 /* РЯДОК 2 */
 .card-mid-left {
-    grid-column: 1 / 3;  /* Довгий блок ліворуч */
+    grid-column: 1 / 3;
+    /* Довгий блок ліворуч */
 }
 
 .card-mid-right {
-    grid-column: 3 / 4;  /* Маленький блок праворуч */
+    grid-column: 3 / 4;
+    /* Маленький блок праворуч */
 }
 
 /* РЯДОК 3 */
 .card-bottom-left {
-    grid-column: 1 / 2;  /* Маленький блок ліворуч */
+    grid-column: 1 / 2;
+    /* Маленький блок ліворуч */
 }
+
 .card-bottom-right {
-    grid-column: 2 / 4;  /* Довгий блок праворуч */
+    grid-column: 2 / 4;
+    /* Довгий блок праворуч */
 }
+
 /* ==========================================================================
    СЕКЦІЯ ТАРИФІВ
    ========================================================================== */
-   .pricing-section {
+.pricing-section {
     width: 100%;
     padding: 40px 10% 100px 10%;
     position: relative;
@@ -344,7 +362,8 @@ body {
 .price-card.popular {
     border-color: rgba(37, 99, 235, 0.4);
     background: rgba(37, 99, 235, 0.02);
-    transform: scale(1.03); /* Трішки збільшений */
+    transform: scale(1.03);
+    /* Трішки збільшений */
 }
 
 .price-card:hover {
@@ -359,7 +378,8 @@ body {
 }
 
 /* Бейджики */
-.price-badge, .price-badge-popular {
+.price-badge,
+.price-badge-popular {
     font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
@@ -429,7 +449,8 @@ body {
     font-weight: 600;
     font-size: 15px;
     transition: all 0.3s ease;
-    margin-top: auto; /* Притискає кнопку до низу, якщо тексти різної довжини */
+    margin-top: auto;
+    /* Притискає кнопку до низу, якщо тексти різної довжини */
 }
 
 .price-card.popular .btn-price {
@@ -445,6 +466,7 @@ body {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(255, 255, 255, 0.2);
 }
+
 /* ==========================================================================
    СПЛИВАЮЧЕ ВІКНО (MODAL)
    ========================================================================== */
@@ -454,9 +476,12 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(4, 5, 7, 0.8);
+    background: rgba(4, 5, 7, 0.85); /* Трішки темніший фон для кращого контрасту */
     backdrop-filter: blur(8px);
-    z-index: 200;
+    
+    /* Піднімаємо модалку на самий верхній шар поверх усіх шапок та карток */
+    z-index: 999999 !important; 
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -465,7 +490,7 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Клас, який відображає вікно через JS */
+/* Коли додається клас open через JS */
 .modal-overlay.open {
     opacity: 1;
     pointer-events: auto;
@@ -480,11 +505,11 @@ body {
     display: flex;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8); /* Тінь під модалкою */
     transform: scale(0.9);
     transition: transform 0.3s ease;
+    z-index: 1000000; /* Контейнер теж у безпечній зоні */
 }
-
 .modal-overlay.open .modal-container {
     transform: scale(1);
 }
@@ -602,6 +627,105 @@ body {
     background: #1D4ED8;
     transform: translateY(-2px);
 }
+/* ==========================================================================
+   СЕКЦІЯ ФУТЕРА (FOOTER)
+   ========================================================================== */
+   .footer {
+    background-color: #0b0d13; /* Темний фон як на скріншоті */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 60px 10% 30px 10%;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Ліва частина з лого */
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    min-width: 220px;
+}
+
+.footer-socials h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #2563EB; /* Синє підсвічування при наведенні */
+}
+
+/* Сітка з колонками посилань */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.footer-col h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-col ul a {
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul a:hover {
+    color: #2563EB;
+}
+
+/* Копірайт в самому низу */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #475569;
+    font-size: 13px;
+}
 
 /* Адаптивність для телефонів */
 @media (max-width: 768px) {
@@ -628,7 +752,8 @@ body {
 
     /* Мобільне меню повністю закрите за замовчуванням */
     .nav-links {
-        display: none; 
+        display: none !important;
+        /* Гарантовано ховаємо на мобілці */
         position: fixed;
         top: 0;
         left: 0;
@@ -646,7 +771,8 @@ body {
 
     /* Клас, який вмикає відображення при кліку */
     .nav-links.active {
-        display: flex;
+        display: flex !important;
+        /* Гарантовано показуємо при кліку */
     }
 
     .nav-links a {
@@ -657,9 +783,11 @@ body {
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 6px);
     }
+
     .menu-toggle.active span:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -6px);
     }
@@ -667,9 +795,11 @@ body {
     .hero h1 {
         font-size: 36px;
     }
+
     .hero p {
         font-size: 16px;
     }
+
     .cta-buttons {
         flex-direction: column;
         width: 100%;
@@ -677,43 +807,48 @@ body {
         margin-left: auto;
         margin-right: auto;
     }
+
     /* Додати всередину @media (max-width: 768px) */
     .info-section {
         padding: 40px 5%;
     }
-    
-   .info-grid {
+
+    .info-grid {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .info-card {
         grid-column: 1 / -1 !important;
         min-height: auto;
         padding: 25px;
     }
+
     /* Адаптація тарифів для мобілок */
     .pricing-section {
         padding: 40px 5% 60px 5%;
     }
-    
+
     .section-title {
         font-size: 28px;
         margin-bottom: 35px;
     }
 
     .pricing-grid {
-        grid-template-columns: 1fr; /* 1 колонка замість 4 */
+        grid-template-columns: 1fr;
+        /* 1 колонка замість 4 */
         gap: 20px;
     }
 
     .price-card.popular {
-        transform: scale(1); /* Прибираємо збільшення на мобільці */
+        transform: scale(1);
+        /* Прибираємо збільшення на мобільці */
     }
-    
+
     .price-card.popular:hover {
         transform: translateY(-5px) scale(1);
     }
+
     /* Адаптація модалки для телефонів */
     .modal-container {
         flex-direction: column;
@@ -721,12 +856,25 @@ body {
         max-height: 90vh;
         overflow-y: auto;
     }
-    .modal-sidebar, .modal-content {
+
+    .modal-sidebar,
+    .modal-content {
         width: 100%;
         padding: 30px 20px;
     }
+
     .modal-sidebar {
         border-right: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    /* Адаптація футера для мобілок */
+    .footer-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer-links-grid {
+        grid-template-columns: repeat(2, 1fr); /* Робимо 2 колонки на телефонах замість 4 */
+        gap: 25px;
     }
 }
